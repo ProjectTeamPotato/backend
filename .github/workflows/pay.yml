@@ -59,3 +59,6 @@ jobs:
       - name: deploy and Spring Boot Run
         working-directory: pay/build/libs
         run: sudo java -jar test.jar --spring.profiles.active=beta
+        
+        
+        
