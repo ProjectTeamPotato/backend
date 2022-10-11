@@ -60,3 +60,6 @@ jobs:
         working-directory: pay/build/libs
         run: sudo java -jar test.jar --spring.profiles.active=beta
         
+        
+        
+        
