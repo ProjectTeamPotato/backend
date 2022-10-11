@@ -1,0 +1,61 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Spring Boot Gradle Test
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  push:
+    branches:
+     - master
+     - pay
+     - 'pay/**'
+    paths:
+    - "pay/**"
+    - ".github/workflows/**"
+  pull_request:
+    branches: [ "pay" ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # runs-on: [self-hosted, linux, x64] #self-hosted
+    if: ${{ contains(github.event.head_commit.message, '#CI')}} # only comment must conatins #CI, the workflow works
+    defaults:
+      run:
+       working-directory: ./pay #Set Working Directory
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checkout Project Sources (Github Install)
+      - uses: actions/checkout@v2
+    
+      # Setup Java
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3.5.1
+        with:
+          java-version: 11
+          distribution: 'zulu' #java distribution Version
+      
+      # Check Directory
+      #- run: ls -al
+          
+      # Setup Gradle
+      - name: SetUp And Setting Gradle
+        uses: gradle/gradle-build-action@v2
+        
+      # Setting Gradle
+      - name: Setting Gradle
+        run: chmod +x gradlew
+      
+      # Build
+      - name: build spring boot
+        run: ./gradlew clean build
+      
+      # Deploy
+      - name: deploy and Spring Boot Run
+        working-directory: pay/build/libs
+        run: sudo java -jar test.jar --spring.profiles.active=beta
