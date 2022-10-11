@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: nausicaa
+    password: 'nausicaa12!@'
+    url: jdbc:mysql://db-ccfu6.cdb.ntruss.com:3306/nausicaa
+  jpa:
+    show-sql: true
+    hibernate:
+      #테이블 자동생성
+      ddl-auto: create
+  profiles:
+    active: beta
+    include:
+      - console-logging
+      - file-logging
