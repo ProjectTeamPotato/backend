@@ -52,5 +52,5 @@ jar {
 
 
 tasks.named('test') {
-	useJUnitPlatform()
+	//useJUnitPlatform()
 }
