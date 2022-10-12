@@ -13,3 +13,8 @@ spring:
     active: local
     include:
       - console-logging
+api:
+  pay:
+    toss:
+      client: test_ck_JQbgMGZzorzEzzQAzxvVl5E1em4d
+      secret: test_sk_Wd46qopOB89odjJxJGdVZmM75y0v
