@@ -46,8 +46,6 @@ jobs:
       # Setup Gradle
       - name: SetUp And Setting Gradle
         uses: gradle/gradle-build-action@v2
-        with:
-          arguments: build -Pprofile=dev
         
       # Setting Gradle
       - name: Setting Gradle
@@ -55,7 +53,7 @@ jobs:
       
       # Build
       - name: build spring boot
-        run: ./gradlew clean build
+        run: ./gradlew clean build -Pprofile=dev
       
       # ssh key copy
       - name: ssh key copy
