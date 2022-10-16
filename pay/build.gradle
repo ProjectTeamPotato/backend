@@ -29,7 +29,24 @@ dependencies {
 }
 
 // Set Environment
-ext.profile = (!project.hasProperty('profile') || !profile) ? 'local' : profile
+sourceSets {
+	if (!project.hasProperty('profile') || !profile) {
+		ext.profile = 'local'
+	}
+
+	main {
+		resources {
+			srcDirs "src/main/resources", "src/env/${profile}"
+		}
+	}
+}
+
+// gradle clean build 시 logback-spring.xml을 공통으로 사용할수있도록 하기위해 설정 넣어줌
+tasks {
+	processResources {
+		duplicatesStrategy = DuplicatesStrategy.INCLUDE
+	}
+}
 
 bootJar {
 	archiveBaseName = 'pay'
@@ -41,7 +58,6 @@ bootJar {
 jar {
 	enabled=false
 }
-
 
 tasks.named('test') {
 	//useJUnitPlatform()
