@@ -53,7 +53,7 @@ jobs:
       
       # Build
       - name: build spring boot
-        run: ./gradlew clean build -Pprofile=dev
+        run: ./gradlew clean build -Pprofile=local
       
       # ssh key copy
       - name: ssh key copy
