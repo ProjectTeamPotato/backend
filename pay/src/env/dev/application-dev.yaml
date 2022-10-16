@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: nausicaa
-    password: 'nausicaa12!@'
+    password: '1q2w3e4r!'
     url: jdbc:mysql://db-ccfu6.cdb.ntruss.com:3306/nausicaa
   jpa:
     show-sql: true
