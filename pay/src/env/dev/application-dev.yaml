@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: nausicaa
+    username: master
     password: '1q2w3e4r!'
     url: jdbc:mysql://db-ccfu6.cdb.ntruss.com:3306/nausicaa
   jpa:

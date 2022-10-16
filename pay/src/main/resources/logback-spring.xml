@@ -23,9 +23,9 @@
     <springProfile name="file-logging">
         <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <prudent>false</prudent> <!-- prudent : file에 저장될때 lock을 생성해서 처리 (서로 다른 VM이 같은 파일을 가리킬때 사용) -->
-            <file>/home/logs/test.log</file>
+            <file>/home/logs/pay.log</file>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-                <fileNamePattern>/home/logs/test.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <fileNamePattern>/home/logs/pay.%d{yyyy-MM-dd}.log</fileNamePattern>
                 <maxHistory>10</maxHistory>
             </rollingPolicy>
             <encoder>
