@@ -11,8 +11,6 @@ spring:
       ddl-auto: create
   profiles:
     active: local
-    include:
-      - console-logging
 api:
   pay:
     toss:

@@ -11,5 +11,3 @@ spring:
       ddl-auto: create
   profiles:
     active: beta
-    include:
-      - file-logging

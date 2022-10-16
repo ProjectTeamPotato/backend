@@ -29,22 +29,13 @@ dependencies {
 }
 
 // Set Environment
-sourceSets {
-	if (!project.hasProperty('profile') || !profile) {
-		ext.profile = 'local'
-	}
+ext.profile = (!project.hasProperty('profile') || !profile) ? 'local' : profile
 
+sourceSets {
 	main {
 		resources {
-			srcDirs "src/main/resources", "src/env/${profile}"
+			srcDirs "src/main/resources-env/${profile}"
 		}
-	}
-}
-
-// gradle clean build 시 logback-spring.xml을 공통으로 사용할수있도록 하기위해 설정 넣어줌
-tasks {
-	processResources {
-		duplicatesStrategy = DuplicatesStrategy.INCLUDE
 	}
 }
 
