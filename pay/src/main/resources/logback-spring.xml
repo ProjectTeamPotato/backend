@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <springProperty name="profile" source="spring.profiles.active"/>
 
-    <springProfile name="console-logging">
-        <!-- 콘솔(STDOUT)에 log 기록 -->
-        <!--    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
-        <!--        <layout class="ch.qos.logback.classic.PatternLayout">-->
-        <!--            <Pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative] %-5level ${PID:-} -&#45;&#45; [%15.15thread] %-40.40logger{36} : %msg%n</Pattern>-->
-        <!--        </layout>-->
-        <!--    </appender>-->
-
-        <!-- 콘솔(CONSOLE)에 log 기록 -->
-        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <springProfile name="local">
+        <springProperty scope="context" name="serverName" source="HOSTNAME"/>
+        <appender name="LOGGING-APPENDER" class="ch.qos.logback.core.ConsoleAppender">
             <encoder>
                 <charset>UTF-8</charset>
-                <!-- %clr : 색깔입히기 -->
                 <pattern>[%-5level] ${PID:-} -&#45;&#45; [%15.15thread] %-40.40logger{36} : %msg%n </pattern>
             </encoder>
         </appender>
     </springProfile>
 
-    <springProfile name="file-logging">
-        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <springProfile name="dev">
+        <appender name="LOGGING-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <prudent>false</prudent> <!-- prudent : file에 저장될때 lock을 생성해서 처리 (서로 다른 VM이 같은 파일을 가리킬때 사용) -->
             <file>/home/logs/pay.log</file>
             <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -35,18 +26,24 @@
         </appender>
     </springProfile>
 
+    <springProfile name="beta">
+        <appender name="LOGGING-APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <prudent>false</prudent> <!-- prudent : file에 저장될때 lock을 생성해서 처리 (서로 다른 VM이 같은 파일을 가리킬때 사용) -->
+            <file>/home/logs/pay.log</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>/home/logs/pay.log.gz.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <maxHistory>10</maxHistory>
+            </rollingPolicy>
+            <encoder>
+                <charset>UTF-8</charset>
+                <pattern>[%-5level] ${PID:-} -&#45;&#45; [%15.15thread] %-40.40logger{36} : %msg%n </pattern>
+            </encoder>
+        </appender>
+    </springProfile>
 
     <!-- log root 레벨 설정 (logging.level.root=info)-->
     <root>
-        <!--     참조할 appender 설정 -->
-        <springProfile name="console-logging">
-            <appender-ref ref="CONSOLE"/>
-            <!--            <appender-ref ref="STDOUT" />-->
-        </springProfile>
-
-        <springProfile name="file-logging">
-            <appender-ref ref="FILE"/>
-        </springProfile>
+        <appender-ref ref="LOGGING-APPENDER"/>
     </root>
 
 </configuration>
