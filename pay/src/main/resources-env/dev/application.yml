@@ -19,3 +19,5 @@ spring:
     hibernate:
       #테이블 자동생성
       ddl-auto: create
+
+
