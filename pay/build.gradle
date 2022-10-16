@@ -31,14 +31,6 @@ dependencies {
 // Set Environment
 ext.profile = (!project.hasProperty('profile') || !profile) ? 'local' : profile
 
-sourceSets {
-	main {
-		resources {
-			srcDirs "src/env/${profile}"
-		}
-	}
-}
-
 bootJar {
 	archiveBaseName = 'pay'
 	archiveFileName = 'pay.jar'
