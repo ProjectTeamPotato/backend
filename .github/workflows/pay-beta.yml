@@ -23,7 +23,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # runs-on: [self-hosted, linux, x64] #self-hosted
-    if: ${{ contains(github.event.head_commit.message, '#CI')}} # only comment must conatins #CI, the workflow works
+    if: ${{ contains(github.event.head_commit.message, '#beta')}} # only comment must conatins #CI, the workflow works
     defaults:
       run:
        working-directory: ./pay #Set Working Directory
@@ -53,9 +53,13 @@ jobs:
       
       # Build
       - name: build spring boot
-        run: ./gradlew clean build
+        run: ./gradlew clean build -Pprofile=beta
+        
+      # ssh key copy
+      - name: ssh key copy
+        run: cp /root/key/devkey.p12 devkey.p12
       
       # Run
       - name: deploy and Spring Boot Run
         working-directory: pay/build/libs
-        run: sudo java -jar pay.jar --spring.profiles.active=beta
+        run: sudo java -jar pay.jar
