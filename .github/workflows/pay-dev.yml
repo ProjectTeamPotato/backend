@@ -57,7 +57,7 @@ jobs:
       
       # ssh key copy
       - name: ssh key copy
-        run: cp /root/key/devkey.p12 devkey.p12
+        run: cp /root/key/devkey.p12 ./src/main/resources/devkey.p12
       
       # Run
       - name: deploy and Spring Boot Run
