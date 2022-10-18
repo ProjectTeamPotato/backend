@@ -55,9 +55,10 @@ jobs:
       - name: build spring boot
         run: ./gradlew clean build -Pprofile=dev
       
+      ## in jar, not fint key-store file path. so need absolute path
       # ssh key copy
-      - name: ssh key copy
-        run: cp /root/key/devkey.p12 ./src/main/resources/devkey.p12
+      #- name: ssh key copy
+      #  run: cp /root/key/devkey.p12 ./src/main/resources/devkey.p12
       
       # Run
       - name: deploy and Spring Boot Run
