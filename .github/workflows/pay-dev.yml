@@ -54,6 +54,15 @@ jobs:
       # Build
       - name: build spring boot
         run: ./gradlew clean build -Pprofile=dev
+        
+      # Run Stop Script
+      - name: run stop script
+        run: ./stop.sh
+      
+      # Run Start Script
+      - name: run start script
+        working-directory: pay/build/libs
+        run: ./start.sh
       
       ## in jar, not fint key-store file path. so need absolute path
       # ssh key copy
@@ -61,6 +70,6 @@ jobs:
       #  run: cp /root/key/devkey.p12 ./src/main/resources/devkey.p12
       
       # Run
-      - name: deploy and Spring Boot Run
-        working-directory: pay/build/libs
-        run: sudo java -jar pay.jar
+      #- name: deploy and Spring Boot Run
+      #  working-directory: pay/build/libs
+      #  run: sudo java -jar pay.jar
