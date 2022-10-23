@@ -26,3 +26,5 @@
 
 - beta
   - add comment #beta
+
+- 러너가 왜 꺼지냐....
