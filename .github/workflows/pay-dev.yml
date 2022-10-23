@@ -61,6 +61,7 @@ jobs:
       
       # Run Start Script
       - name: run start script
+        working-directory: pay/build/libs
         run: ./start.sh
       
       ## in jar, not fint key-store file path. so need absolute path
