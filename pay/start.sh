@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-nohub java -jar build/libs/pay.jar
+nohup java -jar build/libs/pay.jar
