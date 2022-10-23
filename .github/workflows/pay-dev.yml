@@ -55,6 +55,14 @@ jobs:
       - name: build spring boot
         run: ./gradlew clean build -Pprofile=dev
         
+      # chomod Stop Script
+      - name: chmod stop script
+        run: chmod +x stop.sh
+      
+      # chomod Start Script
+      - name: chmod start script
+        run: chomod +x start.sh
+        
       # Run Stop Script
       - name: run stop script
         run: ./stop.sh
