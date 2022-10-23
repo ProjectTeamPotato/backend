@@ -9,4 +9,5 @@ then
 else
   echo "Shutdown Spring boot Application"
   kill -15 ${RUN_PID}
+  sleep 15 #이거 안해주면 start.sh가 무시됨
 fi
