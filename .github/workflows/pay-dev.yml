@@ -61,7 +61,7 @@ jobs:
       
       # chomod Start Script
       - name: chmod start script
-        run: chomod +x start.sh
+        run: chmod +x start.sh
         
       # Run Stop Script
       - name: run stop script
