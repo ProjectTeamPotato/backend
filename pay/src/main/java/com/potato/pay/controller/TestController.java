@@ -12,12 +12,12 @@ public class TestController {
 
 
     @GetMapping("/testGet")
-    public String test(@RequestParam String test) {
+    public String test() {
 
-        return test;
+        return "dsfdsfsfsdf";
     }
 
-    @PostMapping("/testService")
+    @GetMapping("/testService")
     public void testService() {}
 
 }
