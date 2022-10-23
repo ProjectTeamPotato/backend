@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-RUN_PID=$(lsof - ti tcp:443)
+RUN_PID=$(lsof -ti tcp:443)
 
 if [ -z ${RUN_PID} ]
 then
