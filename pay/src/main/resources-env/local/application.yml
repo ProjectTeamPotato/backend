@@ -11,5 +11,8 @@ spring:
       ddl-auto: create
   profiles:
     active: local
-    include:
-      - console-logging
+api:
+  pay:
+    toss:
+      client: test_ck_JQbgMGZzorzEzzQAzxvVl5E1em4d # 프론트에서 사용
+      secret: test_sk_Wd46qopOB89odjJxJGdVZmM75y0v #백엔드에서 사용
