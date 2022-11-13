@@ -9,6 +9,8 @@ spring:
     hibernate:
       #테이블 자동생성
       ddl-auto: create
+  mongodb:
+    connection: mongodb://admin:admin@localhost:27017/test
   profiles:
     active: local
 api:
