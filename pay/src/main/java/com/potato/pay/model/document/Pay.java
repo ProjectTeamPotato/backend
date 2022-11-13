@@ -1,7 +1,7 @@
 package com.potato.pay.model.document;
 
 import com.potato.pay.constant.PayMethod;
-import lombok.RequiredArgsConstructor;
+import lombok.Data;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import javax.persistence.*;
 
 @Document(collation = "pay")
+@SuperBuilder
+@Data
 public class Pay {
 
     @Id

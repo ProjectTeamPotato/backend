@@ -1,11 +1,15 @@
 package com.potato.pay.model.document;
 
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.*;
 
 @Document(collation = "order")
+@SuperBuilder
+@Data
 public class Order {
 
     @Id
