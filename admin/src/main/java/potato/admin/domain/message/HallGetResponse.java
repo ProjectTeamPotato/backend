@@ -1,13 +1,10 @@
 package potato.admin.domain.message;
 
-
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import potato.admin.domain.entity.Hall;
-import potato.admin.domain.entity.ProductRound;
-import potato.admin.domain.entity.Seller;
 
-import java.util.List;
-
+@Builder
 @AllArgsConstructor
 public class HallGetResponse {
     Long hallId;
@@ -19,7 +16,17 @@ public class HallGetResponse {
     String homepage;
 
     static public HallGetResponse of(Hall hall) {
-        return new HallGetResponse(hall.getHallId(), hall.getHallName(), hall.getZip(), hall.getAddress1(),
-                                    hall.getAddress2(),hall.getPhoneNumber(), hall.getHomepage());
+        HallGetResponse hallGetResponse  = HallGetResponse.builder()
+                .hallId(hall.getHallId())
+                .hallName(hall.getHallName())
+                .zip(hall.getZip())
+                .address1(hall.getAddress1())
+                .address2(hall.getAddress2())
+                .phoneNumber(hall.getPhoneNumber())
+                .homepage(hall.getHomepage())
+                .build();
+
+        return hallGetResponse;
     }
+
 }

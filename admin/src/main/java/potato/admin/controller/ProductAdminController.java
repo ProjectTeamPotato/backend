@@ -1,5 +1,6 @@
 package potato.admin.controller;
 
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import potato.admin.domain.message.ProductCreateRequest;
 import potato.admin.domain.message.ProductGetResponse;
@@ -14,7 +15,7 @@ public class ProductAdminController {
     private final ProductAdminService productAdminService;
 
     @PostMapping("/product")
-    public String createProduct(@RequestBody ProductCreateRequest productCreateRequest) {
+    public String createProduct(@Validated @RequestBody ProductCreateRequest productCreateRequest) {
         productAdminService.create(productCreateRequest);
         return "product create test";
     }

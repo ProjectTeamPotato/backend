@@ -13,6 +13,7 @@ import javax.persistence.*;
 public class Seller {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     Long id;
     //userId;
     //licenseNumber

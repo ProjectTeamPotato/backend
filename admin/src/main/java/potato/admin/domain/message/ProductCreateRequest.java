@@ -4,27 +4,29 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import potato.admin.domain.entity.Hall;
 import potato.admin.domain.entity.Product;
-import potato.admin.domain.entity.ProductRound;
-import potato.admin.domain.entity.Seller;
 
-import java.util.List;
+import javax.validation.constraints.NotBlank;
+import java.time.Instant;
+import java.util.TimeZone;
 
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 public class ProductCreateRequest {
-    Long productId;
-    Long sellerId;
-    Long hallId;
+
+    @NotBlank(message="NAME_IS_MANDATORY")
     String productName;
-    Long time;
     String productExplain;
     String productCondition;
     String casting;
 
     public Product toEntity() {
-        return new Product(null, null, null, productName, null, productExplain, productCondition, casting);
+        return Product.builder()
+                .productName(productName)
+                .productExplain(productExplain)
+                .productCondition(productCondition)
+                .casting(casting)
+                .build();
     }
 }

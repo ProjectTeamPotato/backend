@@ -2,23 +2,38 @@ package potato.admin.domain.message;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import potato.admin.domain.entity.Hall;
 import potato.admin.domain.entity.Product;
+import potato.admin.domain.entity.ProductRound;
 import potato.admin.domain.entity.Seller;
 
+import java.time.Instant;
+import java.util.List;
+
+@Builder
 @AllArgsConstructor
 public class ProductGetResponse {
     Long productId;
     Long sellerId;
     Long hallId;
     String productName;
-    Long time;
     String productExplain;
     String productCondition;
     String casting;
+    List<ProductRound> time;
 
     static public ProductGetResponse of(Product product) {
-        return new ProductGetResponse(product.getProductId(), product.getSeller().getId(), product.getHall().getHallId(), product.getProductName(),
-                product.getProductRound().getTime(), product.getProductExplain(), product.getProductCondition(), product.getCasting());
+        ProductGetResponse productGetResponse = ProductGetResponse.builder()
+                .productId(product.getProductId())
+                .sellerId(product.getSeller().getId())
+                .hallId(product.getHall().getHallId())
+                .productName(product.getProductName())
+                .productExplain(product.getProductExplain())
+                .productCondition(product.getProductCondition())
+                .casting(product.getCasting())
+                .time(product.getTimes())
+                .build();
+        return productGetResponse;
     }
 }
