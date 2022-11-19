@@ -1,32 +1,33 @@
-package com.potato.pay.model.document;
+package com.potato.pay.model.entity;
 
 import com.potato.pay.constant.PayMethod;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.persistence.*;
 
-@Document(collation = "pay")
+@Entity(name = "pay")
 @SuperBuilder
 @Data
+@RequiredArgsConstructor
 public class Pay {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Field(name = "user_id")
+    @Column(name = "user_id")
     private Long userId;
-    @Field(name = "pay_mehtod")
+    @Column(name = "pay_mehtod")
     private PayMethod payMethod;
     private Long amount;
-    @Field(name = "discount_amount")
+    @Column(name = "discount_amount")
     private Long discountAmount;
-    @Field(name = "coupon_id")
+    @Column(name = "coupon_id")
     private Long couponId;
-    @Field(name = "cash_receipt")
+    @Column(name = "cash_receipt")
     private String cashReceipt;
-    @Field(name = "point_ration")
+    @Column(name = "point_ration")
     private Float pointRation;
 
 }

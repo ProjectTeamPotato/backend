@@ -1,16 +1,15 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: password
-    url: jdbc:mysql://127.0.0.1:3306/test_schema
+    mysql:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: password
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/test_schema
   jpa:
     show-sql: true
     hibernate:
       #테이블 자동생성
       ddl-auto: create
-  mongodb:
-    connection: mongodb://admin:admin@localhost:27017/test
   profiles:
     active: local
 api:
