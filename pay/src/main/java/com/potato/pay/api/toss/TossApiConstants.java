@@ -9,11 +9,11 @@ public class TossApiConstants {
     private static final String TOSS = "https://api.tosspayments.com/";
     private static final String V1 = "v1/";
     private static final String NOW_VERSION = V1;
-    private static final String TOSS_API = TOSS + NOW_VERSION;
+    public static final String TOSS_API = TOSS + NOW_VERSION;
 
 
     // -------------------- API LIST --------------------------- //
 
-    public static final  String CREATE_PAY = TOSS_API + "payments";
+    public static final  String CREATE_PAY = "payments";
 
 }
