@@ -28,3 +28,10 @@
   - add comment #beta
 
 - 러너가 왜 꺼지냐....
+
+
+
+## 기타이슈
+
+1. Order는 MySQL에서 예약어
+2. 

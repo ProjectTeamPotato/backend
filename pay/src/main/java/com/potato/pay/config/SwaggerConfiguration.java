@@ -12,8 +12,9 @@ public class SwaggerConfiguration {
     @Bean
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
-                .group("v1-test")
+                .group("v1-pay")
                 .pathsToMatch("/test/**")
+                .pathsToMatch("/pay/**")
                 .build();
     }
 
@@ -22,8 +23,8 @@ public class SwaggerConfiguration {
         return new OpenAPI()
                 .info(
                         new Info()
-                                .title("Test Api")
-                                .description("Test Desc")
+                                .title("Pay Api")
+                                .description("Pay Desc")
                                 .version("0.0.1")
                 );
     }
