@@ -1,4 +1,4 @@
-package com.potato.pay.api.toss.model.submodel;
+package com.potato.pay.api.pay.toss.model.submodel;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

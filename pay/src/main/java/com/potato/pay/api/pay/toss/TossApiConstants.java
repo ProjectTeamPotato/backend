@@ -1,4 +1,4 @@
-package com.potato.pay.api.toss;
+package com.potato.pay.api.pay.toss;
 
 public class TossApiConstants {
 

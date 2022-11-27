@@ -1,4 +1,4 @@
-package com.potato.pay.api.toss.model.enumer;
+package com.potato.pay.api.pay.toss.model.enumer;
 
 import lombok.Getter;
 

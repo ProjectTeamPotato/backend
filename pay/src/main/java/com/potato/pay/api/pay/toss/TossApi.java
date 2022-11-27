@@ -1,6 +1,6 @@
-package com.potato.pay.api.toss;
+package com.potato.pay.api.pay.toss;
 
-import com.potato.pay.api.toss.dto.response.TossResponse;
+import com.potato.pay.api.pay.toss.dto.response.TossResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
@@ -14,8 +14,7 @@ public class TossApi {
 
     public TossResponse requestToss(String api, Object body, HttpMethod httpMethod) {
 
-        restTemplate.ex
-
+        return new TossResponse();
     }
 
 

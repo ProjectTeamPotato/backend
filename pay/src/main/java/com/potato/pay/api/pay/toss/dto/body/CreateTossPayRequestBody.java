@@ -1,6 +1,6 @@
-package com.potato.pay.api.toss.dto.body;
+package com.potato.pay.api.pay.toss.dto.body;
 
-import com.potato.pay.api.toss.model.enumer.Method;
+import com.potato.pay.api.pay.toss.model.enumer.Method;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Setter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class CreatePayRequestBody {
+public class CreateTossPayRequestBody {
 
     @NotNull
     Method method;

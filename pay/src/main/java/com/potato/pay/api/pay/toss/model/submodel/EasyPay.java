@@ -1,4 +1,4 @@
-package com.potato.pay.api.toss.model.submodel;
+package com.potato.pay.api.pay.toss.model.submodel;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -10,8 +10,10 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Receipt {
+public class EasyPay {
 
-    String url;
+    String provider;
+    Long amount;
+    Long discountAmount;
 
 }

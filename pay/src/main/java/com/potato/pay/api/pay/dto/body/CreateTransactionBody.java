@@ -1,5 +1,6 @@
-package com.potato.pay.api.toss.model.submodel;
+package com.potato.pay.api.pay.dto.body;
 
+import com.potato.pay.constant.PayMethod;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,10 +11,13 @@ import lombok.experimental.SuperBuilder;
 @Getter
 @Setter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class EasyPay {
+public class CreateTransactionBody {
 
-    String provider;
-    Long amount;
-    Long discountAmount;
+    Long orderId;
+    PayMethod payMethod;
+    Long totalMount;
+    Float discountRatio;
+    Long couponId;
+
 
 }

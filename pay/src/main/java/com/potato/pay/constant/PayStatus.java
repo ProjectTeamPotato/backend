@@ -1,9 +1,13 @@
 package com.potato.pay.constant;
 
 public enum PayStatus {
-    // todo : PayStatus 작성
+    INIT("INIT"),
+    TRANSACTIONING("TRANSACTIONING"),
+    FAIL("FAIL"),
+    SUCCESS("SUCCESS"),
     ;
 
     private String status;
 
+    PayStatus(String status) {this.status = status;}
 }

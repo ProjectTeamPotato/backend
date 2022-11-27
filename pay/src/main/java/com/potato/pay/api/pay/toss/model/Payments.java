@@ -1,7 +1,7 @@
-package com.potato.pay.api.toss.model;
+package com.potato.pay.api.pay.toss.model;
 
-import com.potato.pay.api.toss.model.enumer.Method;
-import com.potato.pay.api.toss.model.submodel.*;
+import com.potato.pay.api.pay.toss.model.submodel.*;
+import com.potato.pay.api.pay.toss.model.enumer.Method;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
