@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    mysql:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: password
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/test_schema
+  jpa:
+    show-sql: true
+    hibernate:
+      #??? ????
+      ddl-auto: create
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group-id-test
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  profiles:
+    active: local
