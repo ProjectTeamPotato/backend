@@ -1,4 +1,4 @@
-package com.potaty.reservation.reservation;
+package com.potato.reservation;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

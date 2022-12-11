@@ -1,4 +1,4 @@
-package com.potaty.reservation.reservation.test;
+package com.potato.reservation.test;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
