@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class SwaggerConfig {
 
     @Bean
-    public GroupedOpenApi publicApi() {
+    public GroupedOpenApi testApi() {
         return GroupedOpenApi.builder()
                 .group("v1-test")
                 .pathsToMatch("/test/**")
@@ -22,8 +22,8 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .info(
                         new Info()
-                                .title("Test Api")
-                                .description("Test Desc")
+                                .title("Reservation Api")
+                                .description("Reservation Desc")
                                 .version("0.0.1")
                 );
     }

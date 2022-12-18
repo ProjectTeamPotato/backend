@@ -20,8 +20,8 @@ public class Product {
     private Long sellerId;
     @Column(name = "hall_id")
     private Long hallId;
-    @Column(name = "product_id")
-    private Long productId;
+    @Column(name = "basket_id")
+    private Long basketId;
     @Column(name = "product_description")
     private String productDescription;
     @Column(name = "product_status")
