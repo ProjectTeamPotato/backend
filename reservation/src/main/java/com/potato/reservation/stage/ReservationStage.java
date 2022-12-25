@@ -3,7 +3,7 @@ package com.potato.reservation.stage;
 import com.potato.reservation.constant.PayStatus;
 import com.potato.reservation.dao.AskRepository;
 import com.potato.reservation.model.entity.Ask;
-import com.potato.reservation.stage.constant.Step;
+import com.potato.reservation.stage.constant.ReservationStep;
 import com.potato.reservation.stage.dto.ReservationParam;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.ObjectUtils;
@@ -26,8 +26,7 @@ public class ReservationStage {
             // throw new Exception();
         }
 
-        reservationParam.setStep(Step.REQUEST_PAY.getStep());
-
+        reservationParam.setReservationStep(ReservationStep.REQUEST_PAY);
         return true;
     }
 

@@ -2,7 +2,7 @@ package com.potato.reservation.stage.constant;
 
 import lombok.Getter;
 
-public enum Step {
+public enum ReservationStep {
 
     CHECK(100),
     REQUEST_PAY(101),
@@ -14,6 +14,6 @@ public enum Step {
     private Integer step;
 
 
-    Step(Integer step){this.step = step;}
+    ReservationStep(Integer step){this.step = step;}
 
 }
