@@ -1,4 +1,4 @@
-package com.potato.reservation.dao;
+package com.potato.reservation.repository;
 
 import com.potato.reservation.model.entity.Product;
 import org.springframework.data.repository.CrudRepository;

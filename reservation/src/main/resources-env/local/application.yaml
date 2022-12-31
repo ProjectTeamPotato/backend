@@ -5,6 +5,8 @@ spring:
       username: root
       password: password
       jdbc-url: jdbc:mysql://127.0.0.1:3306/test_schema
+  pay:
+    url: 127.0.0.1:8081
   jpa:
     show-sql: true
     hibernate:

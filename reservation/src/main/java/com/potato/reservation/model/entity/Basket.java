@@ -15,7 +15,7 @@ import java.util.UUID;
 public class Basket {
 
     @EmbeddedId
-    private BasketUUID basketuuid;
+    private BasketUUID basketUuid;
     @Column(name = "ask_id")
     private Long askId;
     @Column(name = "user_id")

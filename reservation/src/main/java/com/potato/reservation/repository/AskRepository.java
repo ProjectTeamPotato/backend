@@ -1,4 +1,4 @@
-package com.potato.reservation.dao;
+package com.potato.reservation.repository;
 
 import com.potato.reservation.constant.PayStatus;
 import com.potato.reservation.model.entity.Ask;

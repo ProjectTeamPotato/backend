@@ -18,24 +18,21 @@ public class ReservationStageCaller {
     private final ReservationStage reservationStage;
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    public void stageCall(ReservationParam reservationParam) {
+    public boolean stageCall(ReservationParam reservationParam) {
 
         ReservationStep reservationStep = reservationParam.getReservationStep();
 
-        boolean result = switch (reservationStep) {
+        return switch (reservationStep) {
             case CHECK -> reservationStage.check(reservationParam);
+            case CREATE_ASK_ENTITY -> reservationStage.createAskEntity(reservationParam);
+            case REQUEST_PAY -> reservationStage.requestPay(reservationParam);
+            case SET_COMPLETE -> reservationStage.setComplete(reservationParam);
+            case STAGE_COMPLETE -> true;
             default -> false;
         };
-
-        // TODO: 2022-12-25 이 부분 애매함.
-        // stage Caller의 call에서 nextStageCall까지 하는거는 기능이 너무 넓음
-        // 그렇다고 Stage쪽에서 nextStageCall을 호출하게되면 의존성이 무너질듯함
-        if (result) {
-            this.nextStageCall(reservationParam);
-        }
     }
 
-    private void nextStageCall(ReservationParam reservationParam) {
+    public void nextStagePublish(ReservationParam reservationParam) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             //Serialization

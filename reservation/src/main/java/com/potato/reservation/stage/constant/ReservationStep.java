@@ -5,8 +5,9 @@ import lombok.Getter;
 public enum ReservationStep {
 
     CHECK(100),
-    REQUEST_PAY(101),
-    SET_COMPLETE(102),
+    CREATE_ASK_ENTITY(101),
+    REQUEST_PAY(102),
+    SET_COMPLETE(103),
     STAGE_COMPLETE(0),
     ;
 
