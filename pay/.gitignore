@@ -5,6 +5,9 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+### 외부파일 ###
+../
+
 ### STS ###
 .apt_generated
 .classpath

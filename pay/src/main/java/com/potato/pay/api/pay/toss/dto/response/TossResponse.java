@@ -1,6 +1,6 @@
 package com.potato.pay.api.pay.toss.dto.response;
 
-import com.potato.pay.api.pay.toss.model.MainModel;
+import com.potato.pay.api.pay.toss.model.PayApiModel;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -13,6 +13,6 @@ public class TossResponse {
 
     String code;
     String message;
-    MainModel mainModel;
+    PayApiModel payApiModel;
 
 }

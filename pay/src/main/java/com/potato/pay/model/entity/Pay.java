@@ -23,6 +23,8 @@ public class Pay {
     private PayMethod payMethod;
     @Column(name = "pay_status")
     private PayStatus payStatus;
+    @Column(name = "payment_key")
+    private String paymentKey; // 토스 결제 PK
     private Long amount;
     @Column(name = "discount_amount")
     private Long discountAmount;

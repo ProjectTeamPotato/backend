@@ -11,7 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Payments implements MainModel{
+public class TossPayments implements PayApiModel {
 
     String version;
     String paymentKey;

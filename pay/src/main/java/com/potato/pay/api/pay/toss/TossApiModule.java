@@ -3,6 +3,7 @@ package com.potato.pay.api.pay.toss;
 import com.potato.pay.api.pay.PayModule;
 import com.potato.pay.api.pay.dto.body.CreateTransactionBody;
 import com.potato.pay.api.pay.dto.response.PayResponse;
+import com.potato.pay.module.PayTransactionModule;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +13,9 @@ public class TossApiModule implements PayModule {
 
     @Override
     public PayResponse getTransaction(Long payId) {
+
+
+
         return new PayResponse();
     }
 
