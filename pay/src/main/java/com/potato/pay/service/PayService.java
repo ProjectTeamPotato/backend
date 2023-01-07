@@ -6,6 +6,7 @@ import com.potato.pay.api.pay.dto.response.PayResponse;
 import com.potato.pay.constant.ResponseCode;
 import com.potato.pay.dao.PayRepository;
 import com.potato.pay.model.entity.Pay;
+import com.potato.pay.module.AskTransactionModule;
 import com.potato.pay.module.PayTransactionModule;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,14 @@ public class PayService {
 
     private final PayModuleFactory payModuleFactory;
     private final PayTransactionModule payTransactionModule;
+
+    public PayResponse createPay(Long payId) {
+        Pay pay = payTransactionModule.getPay(payId);
+
+
+
+
+    }
 
     public PayResponse getPay(Long id) {
 

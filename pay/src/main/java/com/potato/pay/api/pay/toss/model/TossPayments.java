@@ -10,34 +10,34 @@ import java.util.Date;
 @SuperBuilder
 @Getter
 @Setter
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class TossPayments implements PayApiModel {
+@AllArgsConstructor
+public class TossPayments implements TossModel{
 
-    String version;
-    String paymentKey;
-    String type;
-    String orderId;
-    String orderName;
-    String mId;
-    String currency;
-    Method method;
-    String totalAmount;
-    String balanceAmount;
-    String status;
-    Date requestedAt;
-    Date approvedAt;
-    boolean useEscrow;
-    String lastTransactionKey;
-    Long suppliedAmount;
-    Long vat;
-    boolean cultureExpense;
-    Long taxFreeAmount;
-    boolean isPartialCancelable;
-    Card card;
-    Receipt receipt;
-    EasyPay easyPay;
-    Failure failure;
-    CashReceipt cashReceipt;
-    Discount discount;
+    private String version;
+    private String paymentKey;
+    private String type;
+    private String orderId;
+    private String orderName;
+    private String mId;
+    private String currency;
+    private Method method;
+    private String totalAmount;
+    private String balanceAmount;
+    private String status;
+    private Date requestedAt;
+    private Date approvedAt;
+    private Boolean useEscrow;
+    private String lastTransactionKey;
+    private Long suppliedAmount;
+    private Long vat;
+    private Boolean cultureExpense;
+    private Long taxFreeAmount;
+    private Boolean isPartialCancelable;
+    private Card card;
+    private Receipt receipt;
+    private EasyPay easyPay;
+    private Failure failure;
+    private CashReceipt cashReceipt;
+    private Discount discount;
 
 }
