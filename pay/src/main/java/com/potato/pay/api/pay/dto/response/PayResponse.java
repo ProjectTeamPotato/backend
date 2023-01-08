@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 public class PayResponse {
 
-    private Pay pay;
+    private Long payId;
     private ResponseCode responseCode;
 
 }

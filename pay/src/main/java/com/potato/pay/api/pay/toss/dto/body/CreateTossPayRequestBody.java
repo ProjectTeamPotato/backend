@@ -1,6 +1,6 @@
 package com.potato.pay.api.pay.toss.dto.body;
 
-import com.potato.pay.api.pay.toss.model.enumer.Method;
+import com.potato.pay.api.pay.toss.model.enumer.TossMethod;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 public class CreateTossPayRequestBody {
 
     @NotNull
-    Method method;
+    TossMethod tossMethod;
     @NotNull
     Long amount;
     @NotEmpty

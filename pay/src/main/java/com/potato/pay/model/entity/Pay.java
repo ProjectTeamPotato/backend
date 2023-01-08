@@ -1,6 +1,7 @@
 package com.potato.pay.model.entity;
 
 import com.potato.pay.constant.PayMethod;
+import com.potato.pay.constant.PayType;
 import com.potato.pay.constant.PayStatus;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,9 @@ public class Pay {
     private Long id;
     @Column(name = "user_id")
     private Long userId;
-    @Column(name = "pay_mehtod")
+    @Column(name = "pay_type")
+    private PayType payType;
+    @Column(name = "pay_method")
     private PayMethod payMethod;
     @Column(name = "pay_status")
     private PayStatus payStatus;

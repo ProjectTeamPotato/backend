@@ -1,7 +1,7 @@
 package com.potato.pay.api.pay.toss.model;
 
 import com.potato.pay.api.pay.toss.model.submodel.*;
-import com.potato.pay.api.pay.toss.model.enumer.Method;
+import com.potato.pay.api.pay.toss.model.enumer.TossMethod;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
@@ -20,7 +20,7 @@ public class TossPayments implements TossModel{
     private String orderName;
     private String mId;
     private String currency;
-    private Method method;
+    private TossMethod tossMethod;
     private String totalAmount;
     private String balanceAmount;
     private String status;

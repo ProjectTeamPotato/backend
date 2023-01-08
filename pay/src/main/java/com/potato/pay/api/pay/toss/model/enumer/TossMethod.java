@@ -2,7 +2,7 @@ package com.potato.pay.api.pay.toss.model.enumer;
 
 import lombok.Getter;
 
-public enum Method {
+public enum TossMethod {
 
     CARD("CARD"),
     ;
@@ -10,6 +10,9 @@ public enum Method {
     @Getter
     private String code;
 
-    Method(String code){this.code = code;}
+    TossMethod(String code){this.code = code;}
+
+
+
 
 }

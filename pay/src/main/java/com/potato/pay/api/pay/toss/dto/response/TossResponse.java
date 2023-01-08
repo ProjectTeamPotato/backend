@@ -7,15 +7,13 @@ import com.potato.pay.api.pay.toss.model.TossModel;
 import com.potato.pay.api.pay.toss.model.TossPayments;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-@SuperBuilder
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
+@Slf4j
+@Data
 public class TossResponse<T extends TossModel> {
-
     private String code;
     private String message;
     private T data;
@@ -31,16 +29,11 @@ public class TossResponse<T extends TossModel> {
             }
 
             // TODO: 2023-01-07 constructType 조사
-            JavaType javaType = objectMapper.constructType(object);
-            TossPayments tossPayments = objectMapper.readValue(responseEntity.getBody(), javaType);
-            this.
+            JavaType javaType = objectMapper.getTypeFactory().constructType(object);
+            this.data = objectMapper.readValue(responseEntity.getBody(), javaType);
         } catch (Exception e) {
-            //
+            log.error("Error : " + e);
+            // throw Exception
         }
     }
-
-    private setData(T data) {
-        this.data = data;
-    }
-
 }

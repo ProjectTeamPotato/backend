@@ -56,3 +56,4 @@ jar {
 tasks.named('test') {
 	//useJUnitPlatform()
 }
+targetCompatibility = JavaVersion.VERSION_14

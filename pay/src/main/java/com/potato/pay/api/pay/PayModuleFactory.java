@@ -1,7 +1,7 @@
 package com.potato.pay.api.pay;
 
 import com.potato.pay.api.pay.toss.TossApiModule;
-import com.potato.pay.constant.PayMethod;
+import com.potato.pay.constant.PayType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -11,9 +11,9 @@ public class PayModuleFactory {
 
     private final TossApiModule tossApiModule;
 
-    public PayModule getPayModule(PayMethod payMethod) {
+    public PayModule getPayModule(PayType payType) {
 
-        switch (payMethod) {
+        switch (payType) {
             case TOSS:
                 return tossApiModule;
             case KAKAO:

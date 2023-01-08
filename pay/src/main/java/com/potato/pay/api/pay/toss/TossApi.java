@@ -31,22 +31,12 @@ public class TossApi {
         return restTemplate.exchange(url, httpMethod, httpEntity, String.class);
     }
 
-    public TossResponse<TossPayments> createPay(String api, CreateTossPayRequestBody requestBody) {
+    public TossResponse<TossPayments> createPay(CreateTossPayRequestBody requestBody) {
         String url = TOSS_URL;
 
         ResponseEntity<String> responseEntity = this.request(HttpMethod.POST, url, requestBody);
 
-        ObjectMapper objectMapper = new ObjectMapper();
-
-        try {
-            TossPayments tossPayments = objectMapper.readValue(responseEntity.getBody(), TossPayments.class);
-            return new TossResponse<>(tossPayments);
-        } catch (JsonProcessingException e) {
-            // throw new Exception();
-        }
-
-
-
+        return new TossResponse<>(responseEntity, TossPayments.class);
     }
 
 

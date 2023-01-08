@@ -1,6 +1,6 @@
 package com.potato.pay.api.pay.dto.body;
 
-import com.potato.pay.constant.PayMethod;
+import com.potato.pay.constant.PayType;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +14,7 @@ import lombok.experimental.SuperBuilder;
 public class CreateTransactionBody {
 
     Long orderId;
-    PayMethod payMethod;
+    PayType payType;
     Long totalMount;
     Float discountRatio;
     Long couponId;

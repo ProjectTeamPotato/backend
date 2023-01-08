@@ -18,14 +18,14 @@ public class PayController {
 
     @GetMapping("/{payId}")
     public PayResponse getPay(@PathVariable("payId") Long payId) {
-        return payService.getPay(payId);
+        return new PayResponse();
     }
 
     // todo : transaction이랑 pay 구분해서 집어넣기
-    @GetMapping("/transaction/{payId}")
-    public PayResponse getTransaction(@PathVariable("payId") Long payId) {
-        return payService.getTransaction(payId);
-    }
+//    @GetMapping("/transaction/{payId}")
+//    public PayResponse getTransaction(@PathVariable("payId") Long payId) {
+//        return payService.getTransaction(payId);
+//    }
 
     @PostMapping
     public PayResponse createTransaction(@RequestBody CreateTransactionBody createTransactionBody) {
