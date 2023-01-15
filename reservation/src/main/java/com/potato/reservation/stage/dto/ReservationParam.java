@@ -2,11 +2,16 @@ package com.potato.reservation.stage.dto;
 
 import com.potato.reservation.constant.PayMethod;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 import java.util.UUID;
 
-@Data
+@Getter
+@Setter
+@SuperBuilder
 public class ReservationParam extends StepHead{
 
     private Long userId;
